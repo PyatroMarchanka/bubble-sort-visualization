@@ -7,7 +7,6 @@ interface Props {
 }
 
 export const ColumnsRow = ({ columns }: Props) => {
-  console.log('columns', columns);
   return (
     <Container>
       {columns.map((column, idx) => (
