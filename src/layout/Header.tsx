@@ -4,7 +4,7 @@ import styled from 'styled-components';
 interface Props {}
 interface State {}
 
-export default class Heder extends Component<Props, State> {
+export class Header extends Component<Props, State> {
   state = {};
 
   render() {

@@ -1,8 +1,24 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { Footer } from './layout/Footer';
+import { Header } from './layout/Header';
+import { Main } from './layout/Main';
 
-function App() {
-  return <div></div>;
+interface Props {}
+interface State {}
+
+export default class App extends Component<Props, State> {
+  state = {};
+
+  render() {
+    return (
+      <Container>
+        <Header />
+        <Main />
+        <Footer />
+      </Container>
+    );
+  }
 }
 
-export default App;
+const Container = styled.div``;
