@@ -8,10 +8,12 @@ export class Header extends Component<Props, State> {
   state = {};
 
   render() {
-    return <Container>Header</Container>;
+    return <Container>Bubble sort</Container>;
   }
 }
 
 const Container = styled.div`
   font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 `;

@@ -8,7 +8,7 @@ export class Footer extends Component<Props, State> {
   state = {};
 
   render() {
-    return <Container>Footer</Container>;
+    return <Container></Container>;
   }
 }
 
