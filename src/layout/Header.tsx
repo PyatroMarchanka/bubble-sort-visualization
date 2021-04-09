@@ -13,6 +13,7 @@ export class Header extends Component<Props, State> {
 }
 
 const Container = styled.div`
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   text-align: center;
   margin-bottom: 30px;

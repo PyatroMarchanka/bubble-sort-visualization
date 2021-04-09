@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { ColumnsRow } from '../components/ColumnRow';
 import { getRandomIntArray } from '../sorting';
+import { Controls } from './Controls';
 
 interface Props {}
 interface State {
@@ -75,20 +76,13 @@ export class Main extends Component<Props, State> {
     return (
       <Container>
         <ColumnsRow columns={this.state.columns} />
-        <Controls>
-          {!this.state.isSorted ? (
-            <Button onClick={this.state.isSortingInProcess ? this.pause : this.start}>
-              {this.state.isSortingInProcess ? 'Pause' : 'Start'}
-            </Button>
-          ) : (
-            <Button onClick={this.resetColumns}>New set</Button>
-          )}
-          <Status>
-            {this.state.isSorted
-              ? 'Sorted!'
-              : this.state.isSortingInProcess && 'Sorting in process...'}
-          </Status>
-        </Controls>
+        <Controls
+          start={this.start}
+          pause={this.pause}
+          resetColumns={this.resetColumns}
+          isSorted={this.state.isSorted}
+          isSortingInProcess={this.state.isSortingInProcess}
+        />
       </Container>
     );
   }
@@ -99,22 +93,3 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-const Controls = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-const Button = styled.button`
-  background-color: #faebd7;
-  outline: none;
-  border-radius: 4px;
-  border: 1px solid #c7b7a3;
-  padding: 10px;
-  text-transform: uppercase;
-  margin-right: 20px;
-`;
-
-const Status = styled.span``;

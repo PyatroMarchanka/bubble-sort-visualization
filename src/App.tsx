@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
 import { Main } from './layout/Main';
 
@@ -15,7 +14,6 @@ export default class App extends Component<Props, State> {
       <Container>
         <Header />
         <Main />
-        <Footer />
       </Container>
     );
   }
