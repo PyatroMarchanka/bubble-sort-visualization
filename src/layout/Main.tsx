@@ -42,18 +42,18 @@ export class Main extends Component<Props, State> {
   sortArr = async () => {
     this.state.isSortingInProcess = true;
 
-    const arr = [...this.state.columns];
+    const columns = [...this.state.columns];
 
-    let lenght = arr.length - 1;
+    let steps = columns.length - 1;
     do {
       this.swap = false;
-      for (var i = 0; i < lenght; i++) {
+      for (let i = 0; i < steps; i++) {
         if (!this.state.isSortingInProcess) {
           return;
         }
         await this.nextSortingStep(i);
       }
-      lenght--;
+      steps--;
     } while (this.swap);
 
     this.setState({ isSorted: true });
@@ -62,7 +62,7 @@ export class Main extends Component<Props, State> {
   nextSortingStep = async (idx: number) => {
     const newColumns = [...this.state.columns];
     if (newColumns[idx] < newColumns[idx + 1]) {
-      var temp = newColumns[idx];
+      const temp = newColumns[idx];
       newColumns[idx] = newColumns[idx + 1];
       newColumns[idx + 1] = temp;
       this.swap = true;
