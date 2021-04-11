@@ -7,7 +7,7 @@ interface State {}
 export class Header extends Component<Props, State> {
   state = {};
 
-  render() {
+  render(): JSX.Element {
     return <Container>Bubble sort</Container>;
   }
 }
@@ -17,4 +17,5 @@ const Container = styled.div`
   font-size: 30px;
   text-align: center;
   margin-bottom: 30px;
+  text-transform: uppercase;
 `;

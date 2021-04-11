@@ -25,20 +25,20 @@ export class Main extends Component<Props, State> {
     isSortingInProcess: false,
   };
 
-  resetColumns = () => {
+  resetColumns = (): void => {
     const columns = getRandomIntArray(columnsCount, 200);
     this.setState({ columns, isSorted: false, isSortingInProcess: false });
   };
 
-  pause = () => {
+  pause = (): void => {
     this.setState({ isSortingInProcess: false });
   };
 
-  start = () => {
+  start = (): void => {
     this.setState({ isSortingInProcess: false }, () => this.sortArr());
   };
 
-  sortArr = async () => {
+  sortArr = async (): Promise<void> => {
     this.state.isSortingInProcess = true;
 
     const columns = [...this.state.columns];
@@ -58,7 +58,7 @@ export class Main extends Component<Props, State> {
     this.setState({ isSorted: true });
   };
 
-  nextSortingStep = async (idx: number) => {
+  nextSortingStep = async (idx: number): Promise<void> => {
     const newColumns = [...this.state.columns];
     if (newColumns[idx] < newColumns[idx + 1]) {
       const temp = newColumns[idx];
@@ -71,7 +71,7 @@ export class Main extends Component<Props, State> {
     await new Promise((resolve) => setTimeout(resolve, 100));
   };
 
-  render() {
+  render(): JSX.Element {
     return (
       <Container>
         <ColumnsRow columns={this.state.columns} />

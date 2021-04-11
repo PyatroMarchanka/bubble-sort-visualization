@@ -6,7 +6,7 @@ interface Props {
   columns: number[];
 }
 
-export const ColumnsRow = ({ columns }: Props) => {
+export const ColumnsRow = ({ columns }: Props): JSX.Element => {
   return (
     <Container>
       {columns.map((column, idx) => (

@@ -9,7 +9,7 @@ interface State {}
 export default class App extends Component<Props, State> {
   state = {};
 
-  render() {
+  render(): JSX.Element {
     return (
       <Container>
         <Header />
