@@ -31,7 +31,6 @@ export class Main extends Component<Props, State> {
   };
 
   pause = () => {
-    this.state.isSortingInProcess = false;
     this.setState({ isSortingInProcess: false });
   };
 
